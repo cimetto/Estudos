@@ -2,11 +2,10 @@ import java.util.Scanner;
 
 public class AppGeometry {
     public static void main(String[] args) {
-        // Scanner para capturar a entrada do usuário
+        
         Scanner scanner = new Scanner(System.in);
         int choice;
         
-        // Menu principal para escolha da forma geométrica
         do {
             System.out.println("\nEscolha uma forma geométrica:");
             System.out.println("1. Triângulo");
