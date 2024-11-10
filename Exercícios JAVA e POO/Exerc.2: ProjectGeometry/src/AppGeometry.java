@@ -2,60 +2,54 @@ import java.util.Scanner;
 
 public class AppGeometry {
     public static void main(String[] args) {
-        // Scanner para capturar a entrada do usuário
-        Scanner scanner = new Scanner(System.in);
-        int choice;
         
-        // Menu principal para escolha da forma geométrica
+        Scanner scanner = new Scanner(System.in);
+        int choice;       
+        
         do {
-            System.out.println("\nEscolha uma forma geométrica:");
-            System.out.println("1. Triângulo");
-            System.out.println("2. Quadrado");
-            System.out.println("3. Círculo");
-            System.out.println("4. Retângulo");
-            System.out.println("0. Sair");
+            System.out.println("\nChoice a geometry form:");
+            System.out.println("1. Triangle");
+            System.out.println("2. Square");
+            System.out.println("3. Circle");
+            System.out.println("4. Retangle");
+            System.out.println("0. Exit");
             
-            System.out.print("Escolha uma opção (0-4): ");
+            System.out.print("Choice an option (0-4): ");
             choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
-                    
-                    Triangle triangle = new Triangle();
-                    triangle.infoTriangle(12, 8, 10, 9);
-                    triangle.eFormaGeometrica();
+                     
+                    GeometryForm triangle = new Triangle(12, 13, 14, 9);
                     triangle.tipoFormaGeometrica();
                     triangle.areaFormaGeometrica();
                     break;
                     
                 case 2:
                     
-                    Square square = new Square();
-                    square.infoSquare(4);
+                    GeometryForm square = new Square(4);
                     square.areaFormaGeometrica();
                     break;
                     
                 case 3:
                     
-                    Circle circle = new Circle();
-                    circle.infoCircle(6);
+                    GeometryForm circle = new Circle(4);
                     circle.areaFormaGeometrica();
                     break;
                     
                 case 4:
                     
-                    Retangle retangle = new Retangle();
-                    retangle.infoRetangle(12, 6);
+                    GeometryForm retangle = new Retangle(2, 4);
                     retangle.areaFormaGeometrica();
                     break;
                     
                 case 0:
                     
-                    System.out.println("Saindo do programa...");
+                    System.out.println("Thanks for using my program...");
                     break;
                     
                 default:
-                    System.out.println("Opção inválida. Tente novamente.");
+                    System.out.println("Invalid option. Try again.");
                     break;
             }
         } while (choice != 0); 

@@ -1,15 +1,10 @@
-public class Retangle implements Interface{
+public class Retangle implements GeometryForm{
     private double base, height;
     
-    public void infoRetangle(double base, double height){
+    public Retangle(double base, double height){
         this.base = base;
         this.height = height;
-    }
-    
-    @Override
-    public boolean eFormaGeometrica() {
-        return true;
-    }
+    }    
 
     @Override
     public void tipoFormaGeometrica() {

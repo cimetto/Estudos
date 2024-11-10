@@ -1,12 +1,8 @@
-public class Circle implements Interface{
+public class Circle implements GeometryForm{
     private double ray;
     
-    public void infoCircle(double ray){
+    public Circle(double ray){
         this.ray = ray;
-    }
-    @Override
-    public boolean eFormaGeometrica() {
-        return true;
     }
 
     @Override

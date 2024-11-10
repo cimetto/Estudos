@@ -1,12 +1,8 @@
-public class Square implements Interface{
+public class Square implements GeometryForm{
     private double side;
     
-    public void infoSquare(double side){
+    public Square(double side){
         this.side = side;
-    }
-    @Override
-    public boolean eFormaGeometrica() {
-        return true;
     }
 
     @Override

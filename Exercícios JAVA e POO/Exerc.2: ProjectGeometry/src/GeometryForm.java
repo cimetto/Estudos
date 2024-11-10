@@ -1,5 +1,5 @@
-public interface Interface {
-    boolean eFormaGeometrica();
+public interface GeometryForm {
+
     void tipoFormaGeometrica();
     void areaFormaGeometrica();
 }

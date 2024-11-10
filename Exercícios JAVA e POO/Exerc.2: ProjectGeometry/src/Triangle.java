@@ -1,22 +1,11 @@
-public class Triangle implements Interface{
+public class Triangle implements GeometryForm{
     private double base, side1, side2, height;
     
-    public Triangle(){
-    /*
-        *   eFormaGeometrica();
-        *   tipoFormaGeometrica();
-        *   areaFormaGeometrica();
-        */
-    }
-    public void infoTriangle(double base, double side1, double side2, double height){
+    public Triangle(double base, double side1, double side2, double height){
         this.base = base;
         this.side1 = side1;
         this.side2 = side2;
         this.height = height;
-    }
-    @Override
-    public boolean eFormaGeometrica() {
-        return (side1 + side2 > base) && (side1 + base > side2) && (side2 + base > side1);
     }
 
     @Override
