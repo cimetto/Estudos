@@ -1,7 +1,7 @@
 public class Rectangle implements GeometryForm{
     private double base, height;
     
-    public Retangle(double base, double height){
+    public Rectangle(double base, double height){
         this.base = base;
         this.height = height;
     }    
