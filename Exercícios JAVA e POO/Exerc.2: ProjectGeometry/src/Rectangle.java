@@ -17,7 +17,7 @@ public class Rectangle implements GeometryForm{
         System.out.println("Base: " + this.base);
         System.out.println("Height: " + this.height);
         double areaRetangle = this.base * this.height;
-        System.out.println("The area of the retangle is: " + areaRetangle);
+        System.out.println("The area of the rectangle is: " + areaRetangle);
     }
     
 }

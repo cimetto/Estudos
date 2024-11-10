@@ -40,7 +40,7 @@ public class AppGeometry {
                 case 4:
                     
                     GeometryForm rectangle = new Rectangle(2, 4);
-                    retangle.areaFormaGeometrica();
+                    rectangle.areaFormaGeometrica();
                     break;
                     
                 case 0:
