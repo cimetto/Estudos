@@ -1,4 +1,4 @@
-public class Retangle implements GeometryForm{
+public class Rectangle implements GeometryForm{
     private double base, height;
     
     public Retangle(double base, double height){
