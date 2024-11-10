@@ -2,10 +2,17 @@ import java.util.Scanner;
 
 public class AppGeometry {
     public static void main(String[] args) {
+<<<<<<< HEAD
         
         Scanner scanner = new Scanner(System.in);
         int choice;       
         
+=======
+        
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        
+>>>>>>> eb4c1e9b747aa6ea4ab5842ea12aec907fdcb1f5
         do {
             System.out.println("\nChoice a geometry form:");
             System.out.println("1. Triangle");
