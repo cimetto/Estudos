@@ -68,14 +68,7 @@ public class Main {
                 }
 
                 case 2 -> {
-                    // Verifica se o diretório "Notas" existe e é um diretório
-                    if (path.toFile().exists() && path.toFile().isDirectory()) {
-                        // Lista todos os arquivos no diretório "Notas" e imprime seus nomes
-                        Files.list(path).forEach(p -> System.out.println(p.getFileName().toString()));
-                    } else {
-                        // Imprime uma mensagem se o diretório "Notas" não existir
-                        System.out.println("A pasta 'Notas' não existe.");
-                    }
+                    displayNotesFolderContents(path);
 
                     System.out.print("Digite o nome da nota que deseja ler (não escreva '.txt'): ");
                     String name = scanner.nextLine();
@@ -86,11 +79,7 @@ public class Main {
                 }
 
                 case 3 -> {
-                    if (path.toFile().exists() && path.toFile().isDirectory()) {
-                        Files.list(path).forEach(p -> System.out.println(p.getFileName().toString()));
-                    } else {
-                        System.out.println("A pasta 'Notas' não existe.");
-                    }
+                    displayNotesFolderContents(path);
 
                     System.out.print("Digite o nome da nota que deseja excluir (não escreva '.txt'): ");
                     String name = scanner.nextLine();
@@ -99,5 +88,13 @@ public class Main {
                 }
             }
         } while (option != 0);
+    }
+
+    public static void displayNotesFolderContents(Path pathToNotes){
+        if (pathToNotes.toFile().exists() && pathToNotes.toFile().isDirectory()) {
+            Files.list(pathToNotes).forEach(p -> System.out.println(p.getFileName().toString()));
+        } else {
+            System.out.println("A pasta 'Notas' não existe ou foi excluido.");
+        }
     }
 }
