@@ -90,7 +90,7 @@ public class Main {
         } while (option != 0);
     }
 
-    public static void displayNotesFolderContents(Path pathToNotes){
+    public static void displayNotesFolderContents(Path pathToNotes) throws IOException {
         if (pathToNotes.toFile().exists() && pathToNotes.toFile().isDirectory()) {
             Files.list(pathToNotes).forEach(p -> System.out.println(p.getFileName().toString()));
         } else {
