@@ -36,17 +36,17 @@ public class Main {
             option = scanner.nextInt();
             scanner.nextLine();
 
+            // Define o caminho para o diretório "Notas" na pasta "Documents"
+            Path path = Paths.get(System.getProperty("user.home"), "Documents", "Notas");
+
+            // Verifica se o diretório "Notas" existe na pasta "Documents"
+            if (!path.toFile().exists()) {
+                // Se não existir, redefine o caminho para o diretório "Notas" na pasta "Documentos"
+                path = Paths.get(System.getProperty("user.home"), "Documentos", "Notas");
+            }
+
             switch (option) {
                 case 1 -> {
-                    // Define o caminho para o diretório "Notas" na pasta "Documents"
-                    Path path = Paths.get(System.getProperty("user.home"), "Documents", "Notas");
-
-                    // Verifica se o diretório "Notas" existe na pasta "Documents"
-                    if (!path.toFile().exists()) {
-                        // Se não existir, redefine o caminho para o diretório "Notas" na pasta "Documentos"
-                        path = Paths.get(System.getProperty("user.home"), "Documentos", "Notas");
-                    }
-
                     // Cria a pasta "Notas" se ela não existir
                     Files.createDirectories(path);
 
@@ -68,23 +68,7 @@ public class Main {
                 }
 
                 case 2 -> {
-                    // Define o caminho para o diretório "Notas" na pasta "Documents"
-                    Path path = Paths.get(System.getProperty("user.home"), "Documents", "Notas");
-
-                    // Verifica se o diretório "Notas" existe na pasta "Documents"
-                    if (!path.toFile().exists()) {
-                        // Se não existir, redefine o caminho para o diretório "Notas" na pasta "Documentos"
-                        path = Paths.get(System.getProperty("user.home"), "Documentos", "Notas");
-                    }
-
-                    // Verifica se o diretório "Notas" existe e é um diretório
-                    if (path.toFile().exists() && path.toFile().isDirectory()) {
-                        // Lista todos os arquivos no diretório "Notas" e imprime seus nomes
-                        Files.list(path).forEach(p -> System.out.println(p.getFileName().toString()));
-                    } else {
-                        // Imprime uma mensagem se o diretório "Notas" não existir
-                        System.out.println("A pasta 'Notas' não existe.");
-                    }
+                    displayNotesFolderContents(path);
 
                     System.out.print("Digite o nome da nota que deseja ler (não escreva '.txt'): ");
                     String name = scanner.nextLine();
@@ -95,16 +79,7 @@ public class Main {
                 }
 
                 case 3 -> {
-                    Path path = Paths.get(System.getProperty("user.home"), "Documents", "Notas");
-                    if (!path.toFile().exists()) {
-                        path = Paths.get(System.getProperty("user.home"), "Documentos", "Notas");
-                    }
-
-                    if (path.toFile().exists() && path.toFile().isDirectory()) {
-                        Files.list(path).forEach(p -> System.out.println(p.getFileName().toString()));
-                    } else {
-                        System.out.println("A pasta 'Notas' não existe.");
-                    }
+                    displayNotesFolderContents(path);
 
                     System.out.print("Digite o nome da nota que deseja excluir (não escreva '.txt'): ");
                     String name = scanner.nextLine();
@@ -113,5 +88,13 @@ public class Main {
                 }
             }
         } while (option != 0);
+    }
+
+    public static void displayNotesFolderContents(Path pathToNotes) throws IOException {
+        if (pathToNotes.toFile().exists() && pathToNotes.toFile().isDirectory()) {
+            Files.list(pathToNotes).forEach(p -> System.out.println(p.getFileName().toString()));
+        } else {
+            System.out.println("A pasta 'Notas' não existe ou foi excluido.");
+        }
     }
 }
