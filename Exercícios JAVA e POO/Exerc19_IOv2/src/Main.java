@@ -27,11 +27,13 @@ public class Main {
 
         int option = 0;
         do {
-            System.out.println("\n=====================");
+            System.out.println("=====================");
             System.out.println("Menu de opções:");
             System.out.println("1 - Criar nota");
             System.out.println("2 - Ler nota");
-            System.out.println("3 - Excluir nota");
+            System.out.println("3 - Buscar palavra na nota");
+            System.out.println("4 - Editar nota");
+            System.out.println("5 - Excluir nota");
             System.out.println("0 - Sair");
             System.out.print("Digite a opção desejada: ");
             option = scanner.nextInt();
@@ -42,16 +44,16 @@ public class Main {
 
                 case 2 -> noteManager.readNote();
 
-                case 3 -> noteManager.deleteNote();
+                case 3 -> noteManager.searchNote();
+
+                case 4 -> noteManager.editNote();
+
+                case 5 -> noteManager.deleteNote();
+
+                default -> System.err.println("Opção inválida!");
+
+                case 0 -> System.out.println("Saindo...");
             }
         } while (option != 0);
-    }
-
-    public static void displayNotesFolderContents(Path pathToNotes) throws IOException {
-        if (pathToNotes.toFile().exists() && pathToNotes.toFile().isDirectory()) {
-            Files.list(pathToNotes).forEach(p -> System.out.println(p.getFileName().toString()));
-        } else {
-            System.out.println("A pasta 'Notas' não existe ou foi excluido.");
-        }
     }
 }
