@@ -1,8 +1,3 @@
-/**
- * Class Note -> String name, String content
- * Methods: Getters and Setters
- * */
-
 public class Note {
     private String name;
     private String content;
